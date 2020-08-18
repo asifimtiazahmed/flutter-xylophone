@@ -10,6 +10,16 @@ class XylophoneApp extends StatelessWidget {
     final player = AudioCache();
     player.play('note$noteNum.wav');
   }
+  Expanded genKeys({Color keyColor, int noteNum}){
+    return Expanded(
+      child: FlatButton(
+        onPressed: () {
+          playNote(noteNum);
+        },
+        color: keyColor,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,49 +27,15 @@ class XylophoneApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              FlatButton(
-                onPressed: () {
-                  playNote(1);
-                },
-                color: Colors.red,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playNote(2);
-                },
-                color: Colors.orange,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playNote(3);
-                },
-                color: Colors.yellow,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playNote(4);
-                },
-                color: Colors.green,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playNote(5);
-                },
-                color: Colors.teal,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playNote(6);
-                },
-                color: Colors.blue,
-              ),
-              FlatButton(
-                onPressed: () {
-                  playNote(7);
-                },
-                color: Colors.deepPurple,
-              ),
+              genKeys(keyColor: Colors.red, noteNum: 1),
+              genKeys(keyColor: Colors.orange, noteNum: 2),
+              genKeys(keyColor: Colors.yellow, noteNum: 3),
+              genKeys(keyColor: Colors.green, noteNum: 4),
+              genKeys(keyColor: Colors.teal, noteNum: 5),
+              genKeys(keyColor: Colors.blue, noteNum: 6),
+              genKeys(keyColor: Colors.purple, noteNum: 7),
             ],
           ),
         ),
