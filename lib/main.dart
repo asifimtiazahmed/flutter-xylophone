@@ -36,6 +36,7 @@ class XylophoneApp extends StatelessWidget {
               genKeys(keyColor: Colors.teal, noteNum: 5),
               genKeys(keyColor: Colors.blue, noteNum: 6),
               genKeys(keyColor: Colors.purple, noteNum: 7),
+              genKeys(keyColor: Colors.white60, noteNum: 8),
             ],
           ),
         ),
